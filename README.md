@@ -6,12 +6,12 @@
 
 Personal portfolio of **Subas Ghimire** — video editor and visual editor at Kantipur Television, Nepal.
 
-[![Primary site](https://img.shields.io/badge/primary-GitHub%20Pages-00d6a0?style=flat-square)](https://subahghimire.github.io/Subasghimireportfolio)
+[![Primary site](https://img.shields.io/badge/primary-GitHub%20Pages-00d6a0?style=flat-square)](https://subas-ghimire.com.np)
 [![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)](#tech-stack)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](#deployment)
 [![License](https://img.shields.io/badge/license-personal-9cb1a5?style=flat-square)](#license)
 
-[**Live site ↗**](https://subahghimire.github.io/Subasghimireportfolio) &nbsp;·&nbsp; [Nepali version](https://subahghimire.github.io/Subasghimireportfolio/subas-ghimire.html) &nbsp;·&nbsp; [CV](https://subahghimire.github.io/Subasghimireportfolio/cv.html) &nbsp;·&nbsp; [Email](mailto:ghimiresubas347@gmail.com)
+[**Live site ↗**](https://subas-ghimire.com.np) &nbsp;·&nbsp; [Nepali version](https://subas-ghimire.com.np/subas-ghimire.html) &nbsp;·&nbsp; [CV](https://subas-ghimire.com.np/cv.html) &nbsp;·&nbsp; [Email](mailto:ghimiresubas347@gmail.com)
 
 </div>
 
@@ -123,7 +123,7 @@ It covers the work (editing, visual storytelling, post-production), the tools us
 - `/pro-workspace.html` — local showreel preview, before/after comparison, project tracker with status editing and JSON backup/restore, and email-based client brief.
 - `/hi.html` — Hindi portfolio landing page; English and Nepali versions remain available.
 - `/privacy.html` — privacy notice for browser-local previews, drafts and contact workflows.
-- `/service-worker.js` — offline cache for the core portfolio pages; the web manifest uses a relative scope so it works under GitHub Pages project paths.
+- `/service-worker.js` — offline cache for the core portfolio pages; the web manifest uses a relative scope so it works under Vercel project paths.
 
 The Pro Workspace project list and preview files are stored in the current browser only. Client requests are prepared as email drafts; they are not stored in a shared database. Live analytics, server push notifications, shared client records, and publishing content from Admin require external service credentials and deployment configuration. Do not add private API keys to front-end HTML or JavaScript.
 
@@ -135,7 +135,7 @@ The Pro Workspace project list and preview files are stored in the current brows
 | Behaviour | Vanilla JS — IntersectionObserver reveals, theme toggle, nav |
 | Type | Google Fonts — Space Grotesk, DM Sans, Mukta |
 | Serverless | Vercel functions (`api/chat.js`, `api/video.js`) → Gemini / Veo |
-| Hosting | Vercel (primary) + GitHub Pages (mirror) |
+| Hosting | Vercel |
 
 ## Project structure
 
@@ -175,8 +175,8 @@ vercel dev
 
 ## Deployment
 
-- **Vercel** — every push to `main` deploys to <https://subahghimire.github.io/Subasghimireportfolio>
-- **GitHub Pages** — mirrors the same branch at <https://subahghimire.github.io/Subasghimireportfolio/>
+- **Vercel** — every push to `main` deploys to <https://subas-ghimire.com.np>
+- **Vercel** — mirrors the same branch at <https://subas-ghimire.com.np/>
 
 ## Contact
 
