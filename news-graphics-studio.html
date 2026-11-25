@@ -29,7 +29,7 @@ nav{min-height:66px;display:flex;align-items:center;justify-content:space-betwee
 <main class="wrap">
 <section class="hero"><div><div class="eyebrow">ALL NEWS · ONE CREATIVE DESK</div><h1>News Graphics <span>Studio.</span></h1><p>राजनीति, ब्रेकिङ, खेलकुद, अर्थतन्त्रदेखि अन्तर्राष्ट्रिय समाचारसम्म — फोटो राख्नुहोस्, डिजाइन छान्नुहोस्, नेपाली हेडलाइन लेख्नुहोस् र HD पोस्ट डाउनलोड गर्नुहोस्।</p></div><div class="pill">LOCAL EDITING · NO PHOTO UPLOAD TO SERVER</div></section>
 <section class="workspace">
-<div class="panel"><div class="panelhead"><strong>LIVE DESIGN PREVIEW</strong><small id="formatLabel">4:5 · 1080 × 1350</small></div><div class="preview"><div class="canvasbox"><canvas id="art" width="1080" height="1350"></canvas></div><div class="previewmeta"><span id="photoState">Demo layout · आफ्नो फोटो upload गर्नुहोस्</span><span id="sizeLabel">1080 × 1350 px</span></div><p class="hint">Preview मा फोटो तानेर position मिलाउन सकिन्छ। Export गर्दा यही डिजाइन PNG मा डाउनलोड हुन्छ।</p></div></div>
+<div class="panel"><div class="panelhead"><strong>LIVE DESIGN PREVIEW</strong><small id="formatLabel">4:5 · 1080 × 1350</small></div><div class="preview"><div class="canvasbox"><canvas id="art" width="1080" height="1350"></canvas></div><div class="previewmeta"><span id="photoState">Demo layout · आफ्नो फोटो upload गर्नुहोस्</span><span id="sizeLabel">1080 × 1350 px</span></div><p class="hint">फोटो तानेर position मिलाउनुहोस्, दुई औँलाले pinch गरेर zoom गर्नुहोस्। कम शब्द भए headline आफैँ ठूलो र धेरै शब्द भए आफैँ सानो हुन्छ।</p></div></div>
 <aside class="panel editor"><div class="panelhead"><strong>DESIGN CONTROLS</strong><small>EDIT IN REAL TIME</small></div><div class="controls">
 <div class="field"><label for="format">Output format</label><select id="format"><option value="portrait">News Photo Post · 4:5</option><option value="square">Facebook / Instagram · 1:1</option><option value="wide">YouTube Thumbnail · 16:9</option><option value="story">Story / Reel Cover · 9:16</option></select></div>
 <div class="field"><span class="fieldtitle">Choose a newsroom design</span><div class="templates">
@@ -38,12 +38,13 @@ nav{min-height:66px;display:flex;align-items:center;justify-content:space-betwee
 <button class="tpl" data-t="culture" aria-pressed="false"><i class="swatch"></i>CULTURE</button><button class="tpl" data-t="clean" aria-pressed="false"><i class="swatch"></i>CLEAN</button><button class="tpl" data-t="exclusive" aria-pressed="false"><i class="swatch"></i>EXCLUSIVE</button>
 </div></div>
 <div class="field"><label for="photo">Upload your photo</label><input id="photo" type="file" accept="image/png,image/jpeg,image/webp,image/gif"><p class="hint">JPG · PNG · WEBP · GIF — फोनबाट फोटो छानेपछि preview मा देखिन्छ।</p></div>
-<div class="grid2"><div class="field"><label for="zoom">Photo zoom</label><input id="zoom" type="range" min="50" max="250" value="100"></div><div class="field"><label for="shade">Photo dark overlay</label><input id="shade" type="range" min="0" max="90" value="42"></div></div>
+<div class="field"><label>Photo position & zoom · drag / pinch with two fingers</label><div class="btnrow"><button class="btn secondary" id="zoomOut" type="button">− ZOOM OUT</button><button class="btn secondary" id="zoomIn" type="button">＋ ZOOM IN</button><button class="btn secondary" id="photoFit" type="button">FIT PHOTO</button></div><input id="zoom" aria-label="Photo zoom" type="range" min="25" max="400" value="100"></div><div class="field"><label for="shade">Photo dark overlay</label><input id="shade" type="range" min="0" max="90" value="42"></div>
 <div class="field"><label for="category">Category strip</label><input id="category" maxlength="32" value="BREAKING NEWS"></div>
 <div class="field"><label for="headline">Main Nepali headline</label><textarea id="headline" maxlength="150">देशको राजनीतिमा ठूलो हलचल</textarea></div>
 <div class="field"><label for="subline">Sub headline / detail</label><input id="subline" maxlength="100" value="आजका मुख्य समाचार · विशेष अपडेट"></div>
 <div class="grid2"><div class="field"><label for="brand">Page / Channel Name</label><input id="brand" maxlength="28" value="NEWS UPDATE" placeholder="आफ्नो पेजको नाम लेख्नुहोस्"></div><div class="field"><label for="accent">Accent colour</label><input id="accent" type="color" value="#ed2638"></div></div>
-<div class="field"><label for="fontSize">Headline size</label><input id="fontSize" type="range" min="38" max="100" value="68"></div>
+<div class="grid2"><div class="field"><label for="fontSize">Maximum headline size</label><input id="fontSize" type="range" min="42" max="140" value="112"></div><div class="field"><label for="headlineFit">Text sizing</label><select id="headlineFit"><option value="auto">Auto fit · recommended</option><option value="manual">Manual size</option></select></div></div>
+<div class="grid2"><div class="field"><label for="headlineStyle">Headline text design</label><select id="headlineStyle"><option value="bold">Bold newsroom</option><option value="outline">Outline + shadow</option><option value="boxed">Highlight box</option><option value="clean">Clean minimal</option><option value="italic">Italic impact</option></select></div><div class="field"><label for="headlineLayout">Headline panel</label><select id="headlineLayout"><option value="gradient">Gradient overlay</option><option value="solid">Solid news panel</option><option value="glass">Glass panel</option><option value="stripe">Accent stripe</option></select></div></div>
 <div class="grid2"><div class="field"><label for="alignment">Headline alignment</label><select id="alignment"><option value="left">Left</option><option value="center">Center</option></select></div><div class="field"><label for="showDate">Date label</label><select id="showDate"><option value="no">Hide</option><option value="yes">Show today's date</option></select></div></div>
 <div class="divider"></div>
 <div class="btnrow"><button class="btn secondary" id="reset">RESET DESIGN</button><button class="btn" id="download">DOWNLOAD HD PNG ↓</button></div>
@@ -59,7 +60,7 @@ const sizes={portrait:[1080,1350],square:[1080,1080],wide:[1280,720],story:[1080
 const palettes={
 breaking:['#17070d','#8c1023','#ed2638'],politics:['#061326','#162e50','#e43a4b'],business:['#061c2b','#174b62','#d6aa4f'],sports:['#06170f','#174a2c','#8bd44c'],world:['#06152c','#174c7d','#45a6e8'],weather:['#082437','#1c5a72','#f18a39'],culture:['#21102f','#61234f','#dc6ab0'],clean:['#101820','#35495d','#e9eef5'],exclusive:['#100e0a','#4a351c','#d7b56e']
 };
-let mode='breaking',photo=null,offsetX=0,offsetY=0,drag=null;
+let mode='breaking',photo=null,offsetX=0,offsetY=0,drag=null,pointers=new Map(),pinchStart=null;
 function dims(){return sizes[$('format').value]||sizes.portrait}
 function setStatus(s){$('status').textContent=s}
 function roundRect(x,y,w,h,r){ctx.beginPath();ctx.roundRect(x,y,w,h,r)}
@@ -77,14 +78,26 @@ function draw(){
  ctx.textAlign='right';ctx.font='800 '+(wide?18:21)+'px "DM Sans",sans-serif';ctx.fillStyle='#fff';ctx.fillText($('brand').value.toUpperCase().slice(0,26),W-margin,top+24);ctx.textAlign='left';
  // LIVE 24/7 bug on artwork
  // Bottom newsroom panel
- const panelTop=baseY-(story?100:0),panel=ctx.createLinearGradient(0,panelTop,0,H);panel.addColorStop(0,'rgba(3,5,9,0)');panel.addColorStop(.2,'rgba(3,5,9,.76)');panel.addColorStop(1,'rgba(3,5,9,.97)');ctx.fillStyle=panel;ctx.fillRect(0,panelTop,W,H-panelTop);
- ctx.fillStyle=accent;ctx.fillRect(margin,baseY-16,wide?8:10,story?300:wide?190:250);
- const headline=$('headline').value.trim()||'मुख्य समाचार';let fs=Number($('fontSize').value)*(wide?.72:story?.9:1),maxW=W-margin*2-34,lines=[];
- while(fs>30){lines=fitLines(headline,maxW,'900 '+fs+'px "Noto Sans Devanagari",sans-serif');if(lines.length<=(wide?3:story?5:4))break;fs-=2}
- ctx.font='900 '+fs+'px "Noto Sans Devanagari",sans-serif';ctx.fillStyle='#fff';ctx.shadowColor='rgba(0,0,0,.65)';ctx.shadowBlur=12;ctx.textBaseline='alphabetic';ctx.textAlign=$('alignment').value==='center'?'center':'left';
- const tx=$('alignment').value==='center'?W/2:margin+28,lineH=fs*1.28;let y=baseY+(story?40:wide?42:48);
- lines.slice(0,story?5:wide?3:4).forEach((line,i)=>ctx.fillText(line,tx,y+i*lineH,maxW));ctx.shadowBlur=0;
- const subY=y+Math.min(lines.length,story?5:wide?3:4)*lineH+18;ctx.textAlign='left';ctx.font='600 '+(wide?19:24)+'px "Noto Sans Devanagari",sans-serif';ctx.fillStyle='#f2d8dc';ctx.fillText($('subline').value.slice(0,80),margin+28,Math.min(H-70,subY),maxW);
+ const panelTop=baseY-(story?100:0),panel=ctx.createLinearGradient(0,panelTop,0,H);panel.addColorStop(0,'rgba(3,5,9,0)');panel.addColorStop(.2,'rgba(3,5,9,.76)');panel.addColorStop(1,'rgba(3,5,9,.97)');
+ const panelMode=$('headlineLayout').value;
+ if(panelMode==='solid'){ctx.fillStyle='rgba(4,7,13,.94)';ctx.fillRect(0,panelTop,W,H-panelTop)}
+ else if(panelMode==='glass'){ctx.fillStyle='rgba(7,12,22,.72)';roundRect(margin-10,panelTop+12,W-2*margin+20,H-panelTop-24,24);ctx.fill()}
+ else {ctx.fillStyle=panel;ctx.fillRect(0,panelTop,W,H-panelTop)}
+ if(panelMode==='stripe'||panelMode==='gradient') {ctx.fillStyle=accent;ctx.fillRect(margin,baseY-16,wide?8:10,story?300:wide?190:250)}
+ const headline=$('headline').value.trim()||'मुख्य समाचार';const maxW=W-margin*2-54,maxLines=wide?3:story?6:5,availableH=story?430:wide?205:310;
+ const maxFs=Number($('fontSize').value)*(wide?.78:story?1:1),minFs=wide?34:38;let fs=maxFs,lines=[];
+ const fitMode=$('headlineFit').value;
+ while(fs>minFs){const weight=$('headlineStyle').value==='clean'?700:900;lines=fitLines(headline,maxW,weight+' '+fs+'px "Noto Sans Devanagari",sans-serif');const lineH=fs*1.24;if(fitMode==='manual'||(lines.length<=maxLines&&lines.length*lineH<=availableH))break;fs-=2}
+ lines=fitLines(headline,maxW,($('headlineStyle').value==='clean'?700:900)+' '+fs+'px "Noto Sans Devanagari",sans-serif');
+ const lineH=fs*1.24,shown=lines.slice(0,maxLines),textHeight=shown.length*lineH;
+ let y=baseY+(story?40:wide?42:48);if(fitMode==='auto')y=Math.min(y,H-100-textHeight);
+ ctx.font=($('headlineStyle').value==='italic'?'italic ':'')+($('headlineStyle').value==='clean'?700:900)+' '+fs+'px "Noto Sans Devanagari",sans-serif';
+ ctx.fillStyle='#fff';ctx.shadowColor='rgba(0,0,0,.75)';ctx.shadowBlur=$('headlineStyle').value==='clean'?4:12;ctx.textBaseline='alphabetic';ctx.textAlign=$('alignment').value==='center'?'center':'left';
+ const tx=$('alignment').value==='center'?W/2:margin+28;
+ if($('headlineStyle').value==='boxed'){ctx.shadowBlur=0;ctx.fillStyle=accent;ctx.fillRect(margin+12,y-fs*.92,W-2*margin-24,textHeight+24);ctx.fillStyle='#fff'}
+ if($('headlineStyle').value==='outline'){ctx.lineWidth=Math.max(2,fs*.045);ctx.strokeStyle='#10131a';shown.forEach((line,i)=>ctx.strokeText(line,tx,y+i*lineH,maxW))}
+ shown.forEach((line,i)=>ctx.fillText(line,tx,y+i*lineH,maxW));ctx.shadowBlur=0;
+ const subY=y+textHeight+Math.max(12,fs*.18);ctx.textAlign='left';ctx.font='600 '+(wide?18:story?22:23)+'px "Noto Sans Devanagari",sans-serif';ctx.fillStyle='#f2d8dc';ctx.fillText($('subline').value.slice(0,80),margin+28,Math.min(H-70,subY),maxW);
  // Bottom footer ribbon
  ctx.fillStyle=accent;ctx.fillRect(0,H-12,W,12);
  if($('showDate').value==='yes'){ctx.fillStyle='#fff';ctx.font='600 16px "DM Sans",sans-serif';ctx.textAlign='right';ctx.fillText(new Intl.DateTimeFormat('en-GB',{day:'2-digit',month:'short',year:'numeric'}).format(new Date()),W-margin,H-30);ctx.textAlign='left'}
@@ -92,11 +105,14 @@ function draw(){
 }
 $('photo').addEventListener('change',async e=>{const f=e.target.files&&e.target.files[0];if(!f)return;setStatus('फोटो लोड हुँदैछ...');if(!/^image\/(png|jpeg|webp|gif|bmp)$/i.test(f.type)){setStatus('JPG, PNG वा WEBP फोटो छान्नुहोस्।');e.target.value='';return}try{let im;if('createImageBitmap' in window){try{im=await createImageBitmap(f)}catch(err){im=null}}if(!im){const data=await new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=()=>reject(new Error('File read failed'));reader.readAsDataURL(f)});im=await new Promise((resolve,reject)=>{const pic=new Image();pic.onload=()=>resolve(pic);pic.onerror=()=>reject(new Error('Image decode failed'));pic.src=data})}if(!im.width||!im.height)throw new Error('Invalid image dimensions');photo=im;offsetX=offsetY=0;draw();setStatus('फोटो सफलतापूर्वक थपियो। Preview मा तानेर position मिलाउनुहोस्।')}catch(err){console.error('Photo upload error:',err);photo=null;draw();setStatus('फोटो लोड भएन। JPG वा PNG मा save गरेर फेरि upload गर्नुहोस्।')}});
 document.querySelectorAll('.tpl').forEach(b=>b.addEventListener('click',()=>{mode=b.dataset.t;document.querySelectorAll('.tpl').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));$('accent').value=palettes[mode][2];$('category').value=({breaking:'BREAKING NEWS',politics:'POLITICS UPDATE',business:'BUSINESS NEWS',sports:'SPORTS UPDATE',world:'WORLD NEWS',weather:'WEATHER ALERT',culture:'ENTERTAINMENT',clean:'NEWS UPDATE',exclusive:'SPECIAL REPORT'})[mode];draw()}));
-['format','zoom','shade','category','headline','subline','brand','accent','fontSize','alignment','showDate'].forEach(id=>$(id).addEventListener('input',draw));
-canvas.addEventListener('pointerdown',e=>{if(!photo)return;canvas.style.cursor='grabbing';drag={x:e.clientX,y:e.clientY,ox:offsetX,oy:offsetY};canvas.setPointerCapture(e.pointerId)});
-canvas.addEventListener('pointermove',e=>{if(!drag)return;const r=canvas.getBoundingClientRect(),scale=canvas.width/r.width;offsetX=drag.ox+(e.clientX-drag.x)*scale;offsetY=drag.oy+(e.clientY-drag.y)*scale;draw()});
-canvas.addEventListener('pointerup',()=>{drag=null;canvas.style.cursor='grab'});canvas.addEventListener('pointercancel',()=>{drag=null;canvas.style.cursor='grab'});
-$('reset').onclick=()=>{photo=null;offsetX=offsetY=0;mode='breaking';$('photo').value='';$('format').value='portrait';$('zoom').value=100;$('shade').value=42;$('category').value='BREAKING NEWS';$('headline').value='देशको राजनीतिमा ठूलो हलचल';$('subline').value='आजका मुख्य समाचार · विशेष अपडेट';$('brand').value='NEWS UPDATE';$('accent').value='#ed2638';$('fontSize').value=68;$('alignment').value='left';$('showDate').value='no';document.querySelectorAll('.tpl').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.t==='breaking')));draw();setStatus('डिजाइन reset भयो।')};
+['format','zoom','shade','category','headline','subline','brand','accent','fontSize','headlineFit','headlineStyle','headlineLayout','alignment','showDate'].forEach(id=>$(id).addEventListener('input',draw));
+function distance(a,b){return Math.hypot(a.x-b.x,a.y-b.y)}
+canvas.addEventListener('pointerdown',e=>{if(!photo)return;canvas.setPointerCapture(e.pointerId);pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size===2){const pts=[...pointers.values()];pinchStart={distance:distance(pts[0],pts[1]),zoom:Number($('zoom').value)};drag=null}else if(pointers.size===1){canvas.style.cursor='grabbing';drag={x:e.clientX,y:e.clientY,ox:offsetX,oy:offsetY}}});
+canvas.addEventListener('pointermove',e=>{if(!pointers.has(e.pointerId))return;pointers.set(e.pointerId,{x:e.clientX,y:e.clientY});if(pointers.size>=2&&pinchStart){const pts=[...pointers.values()],d=distance(pts[0],pts[1]);$('zoom').value=Math.max(25,Math.min(400,pinchStart.zoom*d/Math.max(1,pinchStart.distance)));draw();return}if(!drag)return;const r=canvas.getBoundingClientRect(),scale=canvas.width/r.width;offsetX=drag.ox+(e.clientX-drag.x)*scale;offsetY=drag.oy+(e.clientY-drag.y)*scale;draw()});
+function endPointer(e){pointers.delete(e.pointerId);if(pointers.size<2)pinchStart=null;drag=null;canvas.style.cursor='grab'}canvas.addEventListener('pointerup',endPointer);canvas.addEventListener('pointercancel',endPointer);
+canvas.addEventListener('wheel',e=>{if(!photo)return;e.preventDefault();$('zoom').value=Math.max(25,Math.min(400,Number($('zoom').value)*(e.deltaY<0?1.08:.92)));draw()},{passive:false});
+$('zoomIn').onclick=()=>{$('zoom').value=Math.min(400,Number($('zoom').value)+10);draw()};$('zoomOut').onclick=()=>{$('zoom').value=Math.max(25,Number($('zoom').value)-10);draw()};$('photoFit').onclick=()=>{$('zoom').value=100;offsetX=offsetY=0;draw()};
+$('reset').onclick=()=>{photo=null;offsetX=offsetY=0;mode='breaking';$('photo').value='';$('format').value='portrait';$('zoom').value=100;$('shade').value=42;$('category').value='BREAKING NEWS';$('headline').value='देशको राजनीतिमा ठूलो हलचल';$('subline').value='आजका मुख्य समाचार · विशेष अपडेट';$('brand').value='NEWS UPDATE';$('accent').value='#ed2638';$('fontSize').value=112;$('headlineFit').value='auto';$('headlineStyle').value='bold';$('headlineLayout').value='gradient';$('alignment').value='left';$('showDate').value='no';document.querySelectorAll('.tpl').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.t==='breaking')));draw();setStatus('डिजाइन reset भयो।')};
 $('download').onclick=()=>{try{draw();canvas.toBlob(blob=>{if(!blob){setStatus('PNG export असफल भयो।');return}const url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='news-graphic-'+$('format').value+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),1500);setStatus('HD PNG डाउनलोड सुरु भयो।')},'image/png')}catch(e){setStatus('Export असफल भयो। Browser फेरि खोल्नुहोस्।')}};
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(draw).catch(()=>{});draw();
 })();
