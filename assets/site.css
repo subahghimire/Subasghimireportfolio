@@ -481,3 +481,104 @@ body.light-mode .btn.primary,body.light-mode .nav-cta{background:linear-gradient
  .nav-more-languages{padding-top:10px}
 }
 @media(max-width:420px){.nav-more-menu{padding-right:2px;padding-left:2px}}
+
+
+/* ---------- 2026 premium polish ---------- */
+:root{
+  --accent:#16c784;
+  --accent-soft:#b8ffe0;
+  --line:rgba(115,245,190,.18);
+  --line-2:rgba(155,255,210,.42);
+}
+body{
+  background:#050a08;
+  background-image:
+    radial-gradient(ellipse at 78% 12%,rgba(16,185,129,.10),transparent 38%),
+    radial-gradient(ellipse at 8% 54%,rgba(6,95,70,.10),transparent 42%);
+}
+body::before{
+  background:
+    radial-gradient(900px 650px at 82% 4%,rgba(16,185,129,.20),transparent 62%),
+    radial-gradient(760px 580px at 4% 42%,rgba(5,150,105,.13),transparent 64%),
+    radial-gradient(700px 560px at 54% 108%,rgba(16,185,129,.12),transparent 65%),
+    radial-gradient(520px at var(--pointer-x,70vw) var(--pointer-y,8vh),rgba(52,211,153,.09),transparent 70%),
+    linear-gradient(145deg,#050a08 0%,#07110e 48%,#040807 100%);
+}
+header{
+  background:rgba(5,12,9,.76);
+  border-bottom-color:rgba(110,231,183,.18);
+  box-shadow:0 12px 42px rgba(0,0,0,.28);
+}
+.mark{
+  border-radius:13px;
+  box-shadow:0 0 28px rgba(16,185,129,.12),inset 0 1px rgba(255,255,255,.08);
+}
+.nav-cta,.btn.primary{
+  background:linear-gradient(115deg,#047857 0%,#10b981 58%,#34d399 100%);
+  box-shadow:0 10px 32px rgba(5,150,105,.24),inset 0 1px rgba(255,255,255,.2);
+}
+.hero{gap:clamp(28px,5vw,72px);padding-top:66px;padding-bottom:88px}
+.hero h1{text-wrap:balance;text-shadow:0 8px 50px rgba(16,185,129,.15)}
+.lead{max-width:49ch}
+.portrait-area{isolation:isolate}
+.orbit{border-color:rgba(52,211,153,.32);filter:drop-shadow(0 0 22px rgba(16,185,129,.10))}
+.photo{
+  border-radius:190px 190px 22px 22px;
+  border-color:rgba(167,243,208,.48);
+  box-shadow:0 44px 110px rgba(0,0,0,.55),0 0 0 8px rgba(16,185,129,.035),0 0 90px rgba(16,185,129,.16);
+}
+.float-tag,.icon-btn,.chip{
+  background:rgba(9,24,18,.72);
+  backdrop-filter:blur(18px) saturate(1.3);
+}
+.work,.contact,.process,.tool,.svc,.job,.faq details{
+  transition:transform .28s var(--ease),border-color .28s,background .28s,box-shadow .28s;
+}
+.work{
+  border-color:rgba(110,231,183,.19);
+  background:linear-gradient(150deg,rgba(18,42,31,.82),rgba(7,14,11,.88));
+  box-shadow:inset 0 1px rgba(255,255,255,.035);
+}
+.work:hover{
+  border-color:rgba(167,243,208,.5);
+  box-shadow:0 24px 60px rgba(0,0,0,.32),0 0 34px rgba(16,185,129,.08);
+}
+.work-art{
+  background:
+    radial-gradient(ellipse at 50% 118%,rgba(16,185,129,.34),transparent 66%),
+    linear-gradient(145deg,rgba(16,185,129,.07),rgba(4,10,7,.2));
+}
+.process,.contact{
+  border-color:rgba(110,231,183,.22);
+  box-shadow:inset 0 1px rgba(255,255,255,.035),0 24px 70px rgba(0,0,0,.16);
+}
+.tool:hover,.svc:hover{background:linear-gradient(90deg,rgba(16,185,129,.12),transparent 82%)}
+.app{box-shadow:0 8px 24px rgba(0,0,0,.2),inset 0 1px rgba(255,255,255,.14)}
+.block{padding-top:clamp(68px,8vw,100px);padding-bottom:clamp(68px,8vw,100px)}
+.section-top .num{color:rgba(167,243,208,.28)}
+.marquee{background:linear-gradient(90deg,rgba(16,185,129,.09),transparent 30%,transparent 70%,rgba(16,185,129,.09))}
+footer{border-top-color:rgba(110,231,183,.18)}
+.btn:focus-visible,.icon-btn:focus-visible,.nav-cta:focus-visible{outline-offset:5px}
+@media(max-width:900px){
+  .hero{min-height:0;padding-top:42px;padding-bottom:62px;gap:30px}
+  .portrait-area{min-height:440px}
+  .photo{width:min(78%,330px)}
+}
+@media(max-width:620px){
+  .wrap{width:min(var(--max),calc(100% - 34px))}
+  .hero{padding-top:32px;padding-bottom:52px;gap:8px}
+  .hero h1{font-size:clamp(54px,15vw,82px);margin:20px 0}
+  .lead{font-size:15px}
+  .portrait-area{min-height:390px;margin-top:4px}
+  .orbit{width:min(94%,370px)}
+  .photo{width:min(76%,292px)}
+  .float-tag{right:0;bottom:10px;font-size:8px}
+  .block{gap:24px;padding-top:64px;padding-bottom:64px}
+  .section-top{position:static}
+  .section-top .num{font-size:32px}
+  .contact{padding:26px 20px}
+}
+@media(prefers-reduced-motion:reduce){
+  .orbit,.photo,.marquee-track,.dot{animation:none!important}
+  *,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important}
+}
