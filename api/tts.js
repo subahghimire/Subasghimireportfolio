@@ -1,7 +1,6 @@
 export default async function handler(req, res) {
   const origin = req.headers.origin || "";
   const allowedOrigins = [
-    "https://subahghimire.github.io",
     "https://subas-ghimire.vercel.app",
     "https://subas-ghimire.com.np",
     "https://www.subas-ghimire.com.np"
