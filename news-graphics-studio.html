@@ -138,11 +138,11 @@ function draw(){
  const lineH=fs*1.24,shown=lines.slice(0,maxLines),textHeight=shown.length*lineH;
  let y=baseY+(story?40:wide?42:48)+Number($('headlineOffset').value);if(fitMode==='auto')y=Math.min(y,H-100-textHeight);
  ctx.font=900+' '+fs+'px "Noto Sans Devanagari",sans-serif';
- ctx.fillStyle='#fff';ctx.shadowColor='rgba(0,0,0,.75)';ctx.shadowBlur=$('textShadow').value==='yes'?12:0;ctx.textBaseline='alphabetic';ctx.textAlign=$('alignment').value==='center'?'center':'left';
+ ctx.fillStyle=$('proTitleColor').value;ctx.shadowColor='rgba(0,0,0,.75)';ctx.shadowBlur=$('textShadow').value==='yes'?Number($('proShadow').value):0;ctx.textBaseline='alphabetic';ctx.textAlign=$('alignment').value==='center'?'center':'left';
  const tx=$('alignment').value==='center'?W/2:margin+28;
  if(false){ctx.shadowBlur=0;ctx.fillStyle=accent;ctx.fillRect(margin+12,y-fs*.92,W-2*margin-24,textHeight+24);ctx.fillStyle='#fff'}
  if(false){ctx.lineWidth=Math.max(2,fs*.045);ctx.strokeStyle='#10131a';shown.forEach((line,i)=>ctx.strokeText(line,tx,y+i*lineH,maxW))}
- shown.forEach((line,i)=>ctx.fillText(line,tx,y+i*lineH,maxW));ctx.shadowBlur=0;
+ shown.forEach((line,i)=>{if(Number($('proOutline').value)>0){ctx.lineWidth=Number($('proOutline').value);ctx.strokeStyle=$('proOutlineColor').value;ctx.strokeText(line,tx,y+i*lineH,maxW)}ctx.fillText(line,tx,y+i*lineH,maxW)});ctx.shadowBlur=0;
  const subY=y+textHeight+Math.max(12,fs*.18);ctx.textAlign='left';ctx.font='600 '+(wide?18:story?22:23)+'px "Noto Sans Devanagari",sans-serif';ctx.fillStyle='#f2d8dc';ctx.fillText($('subline').value.slice(0,80),margin+28,Math.min(H-70,subY),maxW);
  // Bottom footer ribbon
  ctx.fillStyle=accent;ctx.fillRect(0,H-12,W,12);
