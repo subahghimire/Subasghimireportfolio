@@ -78,11 +78,12 @@ function draw(){
  // LIVE 24/7 bug on artwork
  // Bottom newsroom panel
  const panelTop=baseY-(story?100:0),panel=ctx.createLinearGradient(0,panelTop,0,H);panel.addColorStop(0,'rgba(3,5,9,0)');panel.addColorStop(.2,'rgba(3,5,9,.76)');panel.addColorStop(1,'rgba(3,5,9,.97)');ctx.fillStyle=panel;ctx.fillRect(0,panelTop,W,H-panelTop);
- const headlineLineCount=Math.min(lines.length,story?5:wide?3:4);const redLineTop=baseY-16;const redLineHeight=Math.max(54,(headlineLineCount-1)*lineH+fs*1.12+24);ctx.fillStyle=accent;ctx.fillRect(margin,redLineTop,wide?8:10,redLineHeight);
+ 
  const headline=$('headline').value.trim()||'मुख्य समाचार';let fs=Number($('fontSize').value)*(wide?.72:story?.9:1),maxW=W-margin*2-34,lines=[];
  while(fs>30){lines=fitLines(headline,maxW,'900 '+fs+'px "Noto Sans Devanagari",sans-serif');if(lines.length<=(wide?3:story?5:4))break;fs-=2}
  ctx.font='900 '+fs+'px "Noto Sans Devanagari",sans-serif';ctx.fillStyle='#fff';ctx.shadowColor='rgba(0,0,0,.65)';ctx.shadowBlur=12;ctx.textBaseline='alphabetic';ctx.textAlign=$('alignment').value==='center'?'center':'left';
  const tx=$('alignment').value==='center'?W/2:margin+28,lineH=fs*1.28;let y=baseY+(story?40:wide?42:48);
+ const headlineLineCount=Math.min(lines.length,story?5:wide?3:4);const redLineTop=baseY-16;const redLineHeight=Math.max(54,(headlineLineCount-1)*lineH+fs*1.12+24);ctx.fillStyle=accent;ctx.fillRect(margin,redLineTop,wide?8:10,redLineHeight);
  lines.slice(0,story?5:wide?3:4).forEach((line,i)=>ctx.fillText(line,tx,y+i*lineH,maxW));ctx.shadowBlur=0;
  const subY=y+Math.min(lines.length,story?5:wide?3:4)*lineH+18;ctx.textAlign='left';ctx.font='600 '+(wide?19:24)+'px "Noto Sans Devanagari",sans-serif';ctx.fillStyle='#f2d8dc';ctx.fillText($('subline').value.slice(0,80),margin+28,Math.min(H-70,subY),maxW);
  // Bottom footer ribbon
