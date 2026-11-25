@@ -1,6 +1,6 @@
 export default async function handler(req, res) {
   const origin = req.headers.origin || "";
-  const allowedOrigins = ["https://subahghimire.github.io", "https://subas-ghimire.vercel.app", "https://subas-ghimire.com.np", "https://www.subas-ghimire.com.np"];
+  const allowedOrigins = ["https://subas-ghimire.vercel.app", "https://subas-ghimire.com.np", "https://www.subas-ghimire.com.np"];
   if (allowedOrigins.includes(origin)) res.setHeader("Access-Control-Allow-Origin", origin);
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
