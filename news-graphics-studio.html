@@ -71,7 +71,7 @@ function draw(){
  const alpha=Number($('shade').value)/100,fade=ctx.createLinearGradient(0,H*.35,0,H);fade.addColorStop(0,'rgba(0,0,0,0)');fade.addColorStop(.35,'rgba(0,0,0,'+(alpha*.4)+')');fade.addColorStop(1,'rgba(0,0,0,'+Math.min(.98,alpha+.48)+')');ctx.fillStyle=fade;ctx.fillRect(0,0,W,H);
  const wide=W>H,story=H>W,margin=wide?54:64,top=story?100:70,baseY=story?H-370:wide?H-220:H-310;
  // Elegant top masthead and category ribbon
- ctx.fillStyle='rgba(5,8,14,.72)';ctx.fillRect(0,0,W,story?190:wide?116:130);
+ /* top black overlay removed */
  ctx.fillStyle=accent;roundRect(margin,top,wide?250:290,wide?42:48,7);ctx.fill();
  ctx.fillStyle='#fff';ctx.font='900 '+(wide?19:22)+'px "DM Sans",sans-serif';ctx.textBaseline='middle';ctx.fillText($('category').value.toUpperCase().slice(0,30),margin+16,top+(wide?21:24));
  ctx.textAlign='right';ctx.font='800 '+(wide?18:21)+'px "DM Sans",sans-serif';ctx.fillStyle='#fff';ctx.fillText($('brand').value.toUpperCase().slice(0,26),W-margin,top+24);ctx.textAlign='left';
