@@ -72,8 +72,8 @@ function draw(){
  const wide=W>H,story=H>W,margin=wide?54:64,top=story?100:70,baseY=story?H-370:wide?H-220:H-310;
  // Elegant top masthead and category ribbon
  /* top black overlay removed */
- ctx.fillStyle=accent;roundRect(margin,top,wide?250:290,wide?42:48,7);ctx.fill();
- ctx.fillStyle='#fff';ctx.font='900 '+(wide?19:22)+'px "DM Sans",sans-serif';ctx.textBaseline='middle';ctx.fillText($('category').value.toUpperCase().slice(0,30),margin+16,top+(wide?21:24));
+ const categoryText=$('category').value.toUpperCase().slice(0,30);const categoryFont=wide?19:22;ctx.font='900 '+categoryFont+'px "DM Sans",sans-serif';const categoryWidth=Math.ceil(ctx.measureText(categoryText).width)+32;ctx.fillStyle=accent;roundRect(margin,top,categoryWidth,wide?42:48,7);ctx.fill();
+ ctx.fillStyle='#fff';ctx.font='900 '+categoryFont+'px "DM Sans",sans-serif';ctx.textBaseline='middle';ctx.fillText(categoryText,margin+16,top+(wide?21:24));
  ctx.textAlign='right';ctx.font='800 '+(wide?18:21)+'px "DM Sans",sans-serif';ctx.fillStyle='#fff';ctx.fillText($('brand').value.toUpperCase().slice(0,26),W-margin,top+24);ctx.textAlign='left';
  // LIVE 24/7 bug on artwork
  // Bottom newsroom panel
